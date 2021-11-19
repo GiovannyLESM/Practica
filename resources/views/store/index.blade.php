@@ -1,19 +1,20 @@
 @extends('store.template')
 @section('content')
-    <div class="products">
+<div class="container-md text-center"><hr>
+    <div id="products">
         @foreach ( $products as $product)
-            <div class="product">
-                <h3>{{$product->name}}</h3>
-                <img src="{{$product->image}}" width="250">
-                <div class="product-info">
-                    <p>{{$product->description}}</p>
-                    <p>Precio: ${{number_format($product->price,2)}}</p>
+            <div class="product white-panel">
+                <h3>{{$product->name}}</h3><hr>
+                <img src="{{$product->image}}" width="200">
+                <div class="product-info panel">
+                    <h3><span class="btn btn-success">Precio: ${{number_format($product->price,2)}}</span></h3>
                     <p>
-                        <a href="#">La quiero</a>
-                        <a href="product/{{$product->slug}}">Leer Mas</a>
+                        <a class="btn btn-warning" href="#">La quiero</a>
+                        <a class="btn btn-primary" href="product/{{$product->slug}}">Leer Mas</a>
                     </p>
                 </div>
             </div>
         @endforeach
     </div>
+</div>
 @stop

@@ -9,7 +9,7 @@
                 <div class="product-info panel">
                     <h3><span class="btn btn-success">Precio: ${{number_format($product->price,2)}}</span></h3>
                     <p>
-                        <a class="btn btn-warning" href="#">La quiero</a>
+                        <a class="btn btn-warning" href="cart/add/{{$product->slug}}">La quiero</a>
                         <a class="btn btn-primary" href="product/{{$product->slug}}">Leer Mas</a>
                     </p>
                 </div>

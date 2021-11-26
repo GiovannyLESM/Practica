@@ -214,3 +214,17 @@ img {
 .descripciones {
     text-align: justify;
 }
+
+
+/*tabla carrito*/
+
+.table-cart {
+    background: #fff;
+    border-radius: 1em;
+    margin-bottom: 30px;
+    padding: 1em;
+}
+
+.table-cart img {
+    width: 50px;
+}

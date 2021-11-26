@@ -17,7 +17,7 @@
                     <p class="descripciones">{{$product->description}}</p>
                     <h3><span class="btn btn-success">Precio: ${{number_format($product->price,2)}}</span></h3>
                     <h3>
-                        <a class="btn btn-warning btn-block" href="#">La Quiero</a>
+                        <a class="btn btn-warning btn-block" href="http://127.0.0.1:8000/cart/add/{{$product->slug}}">La Quiero</a>
                     </h3>
                 </div>
             </div>

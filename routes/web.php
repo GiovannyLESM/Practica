@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,17 @@ use App\Http\Controllers\StoreController;
 |
 */
 
+Route::bind('product',function($slug){
+    return App\Models\Product::where('slug',$slug)->first();
+});
 Route::get('/', StoreController::class);
 Route::get('product/{slug}',[StoreController::class,'show']);
+//carrito
+Route::get('cart/show',[CartController::class,'show',]);
+Route::get('cart/add/{product}',[CartController::class,'add']);
+Route::get('cart/delete/{product}',[CartController::class,'delete']);
+Route::get('cart/trash',[CartController::class,'trash']);
+Route::get('cart/update/{product}/quantity',[
+    'as'=>'cart-update',
+    'uses'=>'CartController@update'
+]);
